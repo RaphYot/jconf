@@ -44,3 +44,9 @@ From the following JSON file:
 # Default tags
 
 Only string and integers are supported. Tags values must be between quoted, but if the field having a default tag is an integer, it will be converted.
+
+# TODO
+
+- Allow to pass a non existant JSON file (to only load defaults)
+- Use a logger
+- Read env variables in addition to json?
