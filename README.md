@@ -1,6 +1,6 @@
 # Package jconf
 
-jconf is a library aimed to help parse project configuration files written in JSON.
+jconf is a Golang library aimed to help parse project configuration files written in JSON.
 
 For example (see test file), this code:
 
