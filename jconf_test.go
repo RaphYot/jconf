@@ -5,10 +5,12 @@ import (
 )
 
 type testConfig struct {
-	MyString        string `json:"my_string"`
-	MyInt           int
-	MyDefaultString string `default:"foo"`
-	MyDefaultInt    int    `default:"77"`
+	MyString         string `json:"my_string"`
+	MyInt            int
+	MyDefaultString  string `default:"foo"`
+	MyDefaultInt     int    `default:"77"`
+	MyDefaultString1 string `json:"my_default_string1" default:"defaultstring"`
+	MyDefaultString2 string `json:"i_do_not_exist" default:"defaultstring"`
 }
 
 var config testConfig
@@ -32,6 +34,12 @@ func TestLoad(t *testing.T) {
 	}
 	if config.MyDefaultInt != 77 {
 		t.Error("JSON var MyDefaultInt not correct, expected 77, got: ", config.MyDefaultInt)
+	}
+	if config.MyDefaultString1 != "bar" {
+		t.Error("JSON var MyDefaultString1 not correct, expected bar, got: ", config.MyDefaultString1)
+	}
+	if config.MyDefaultString2 != "defaultstring" {
+		t.Error("JSON var MyDefaultString2 not correct, expected defaultstring, got: ", config.MyDefaultString2)
 	}
 }
 

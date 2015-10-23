@@ -1,5 +1,6 @@
 {
     "my_string": "bar",
+    "my_default_string1": "bar",
     "MyInt": 2
 }
 
